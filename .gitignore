@@ -1,0 +1,7 @@
+*.pyc
+*.swp
+venv/*
+codesters/local_settings.py
+codesters/prod_settings.py
+*.db
+assets/*

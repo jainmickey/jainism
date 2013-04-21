@@ -1,0 +1,8 @@
+location(textfield)
+url_location(link)
+images
+tags
+date
+details(textfield)
+title
+blog(foreign key)
