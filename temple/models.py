@@ -35,11 +35,11 @@ class Address(models.Model):
     country = models.CharField(max_length=120, default='India')
 
     def __unicode__(self):
-        return unicode('%s %s' %(self.street, self.city, self.state))
+        return unicode('%s %s %s' %(self.street, self.city, self.state))
 
 class Temple(models.Model):
     title = models.CharField(max_length=100, unique=True)
-    images = models.ImageField(max_length=100, upload_to="/media", null=True, blank=True)
+    images = models.ImageField(max_length=100, upload_to="{{ MEDIA_URL }}", null=True, blank=True)
     slug = models.SlugField(max_length=255)
     location = models.ForeignKey(Address)
     location_url = models.URLField(blank=True)

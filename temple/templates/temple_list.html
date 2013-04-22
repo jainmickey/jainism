@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load url from future %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span8">
+            {% for index in temple_list %}
+            <h2><a href="{% url 'temple_detail' index.id %}">{{ index.title }}</a></h2>
+            <small>{{ index.estd }}</ br>{{ index.updated_at }}</small>
+            <p>{{ index.location }}</p>
+            {% if index.location_url %}
+            <a href="index.location_url">Locate on Google maps</a>
+            {% endif %}
+            {% if index.images %}
+            <img src="{{ index.images }}" alt="image" />
+            {% endif %}
+            <p>{{ index.description }}</p>
+            {% empty %}
+            <h3>Sorry, no posts yet. Check back soon!</h3>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

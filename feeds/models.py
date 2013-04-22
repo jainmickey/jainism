@@ -27,7 +27,7 @@ class Feed(models.Model):
     slug = models.SlugField(max_length=300, blank=True, default='')
 
     class Meta:
-        ordering = ["date", "title"]
+        ordering = ["updated_at", "title"]
 
     def get_tags(self):
         return self.tags.all()

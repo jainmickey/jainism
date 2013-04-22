@@ -1,0 +1,24 @@
+{% load url from future %}
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block page_title %}Jainism{% endblock %}</title>
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+    <div class="header hero-unit">
+        <h1><a href="{% url 'temple_list' %}">Jainism</a></h1>
+        <p class="lead">Know everything about Jain religion</p>
+        <div class="row">
+            <a href="{% url 'home' %}" class="btn btn-primary pull-left">Home</a>
+            <a href="{% url 'post_create' %}" class="btn btn-primary pull-right">New Post</a>
+        </div>
+    </div>
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+</div>
+</body>
+</html>
